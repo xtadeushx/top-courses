@@ -6,6 +6,7 @@ import { ENV } from 'common/enums/enums';
 import previewCourses from '../../moch/cursess.json'
 import { ICoursesList } from 'common/types/coursesList.types';
 import Footer from 'components/common/footer/footer';
+import { CoursesLayout } from 'components/courses/courses-layout';
 
 const App = () => {
   const [courses, setCourses] = useState<any>([])
@@ -21,7 +22,10 @@ const App = () => {
         logOut={() => console.log('log out')}
         user='Dijon Dou'
       />
-      <h1>Best IT Courses</h1>
+      <CoursesLayout
+        courses={courses}
+        loading="success"
+      />
       <Footer />
     </div>
   )

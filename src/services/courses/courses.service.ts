@@ -14,10 +14,10 @@ class Courses {
     this._http = http;
   }
 
-  getAllCourses(filter: string) {
+  getAllCourses() {
     return this._http.load(`${this._apiPath}${ApiPath.COURSES}`, {
       method: HttpMethod.GET,
-      query: filter,
+      query: '',
     });
   }
 

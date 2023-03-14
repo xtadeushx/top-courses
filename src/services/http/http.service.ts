@@ -1,5 +1,5 @@
 import { getStringifiedQuery } from 'helpers/http';
-import { StorageKey, HttpHeader, HttpMethod } from 'common/enums/enums';
+import { StorageKey, HttpHeader, HttpMethod, ENV } from 'common/enums/enums';
 import { HttpError } from 'common/enums/exceptions/http-error.exception';
 
 class Http {
@@ -31,7 +31,7 @@ class Http {
       .catch(this._throwError);
   }
 
-  _getHeaders({ hasAuth, contentType }: any) {
+  async _getHeaders({ hasAuth, contentType }: any) {
     const headers = new Headers();
 
     if (contentType) {
@@ -39,9 +39,16 @@ class Http {
     }
 
     if (hasAuth) {
-      const token = this._storage.getItem(StorageKey.TOKEN);
+      let token;
+      try {
+        token = this._storage.getItem(StorageKey.TOKEN);
+        if (!token) return;
+        headers.append(HttpHeader.AUTHORIZATION, `Bearer ${token}`);
+      } catch (error) {
+        console.log(error);
+      }
+      // const token = this._storage.getItem(StorageKey.TOKEN);
 
-      headers.append(HttpHeader.AUTHORIZATION, `Bearer ${token}`);
     }
 
     return headers;

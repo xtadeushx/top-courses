@@ -1,9 +1,8 @@
 import { Link } from 'hooks/hooks';
 import { Meta } from 'common/types/course.types';
+import { Player } from 'components/common/video/video';
 
 import styles from './courses-card.module.scss';
-import { CourseVideoPreview } from 'common/types/coursesList.types';
-import { Player } from 'components/common/video/video';
 
 interface ICoursesCardProps {
     id: string
@@ -11,12 +10,11 @@ interface ICoursesCardProps {
     lessonsCount: number
     rating: number,
     preview: string
-    meta: Meta
+    meta?: Meta
 };
 
 const CoursesCard: React.FC<ICoursesCardProps> = ({ title, lessonsCount, preview, meta, rating, id }) => {
-    const { previewImageLink, duration, link } = meta.courseVideoPreview || { previewImageLink: '', duration: 10, link: '' }
-    const { skills } = meta
+    const { duration, link } = meta?.courseVideoPreview || { previewImageLink: '', duration: 10, link: '' }
     return (
         <div data-test-id="curse-card" className={styles['curse-card']}>
             <div className={styles['curse-card__content']}>
@@ -53,7 +51,7 @@ const CoursesCard: React.FC<ICoursesCardProps> = ({ title, lessonsCount, preview
                     </div>
                 </div>
                 <ul className={styles['skills']}>
-                    {skills?.map((el, index) => (
+                    {meta && meta.skills?.map((el, index) => (
                         <li key={index}>{el}</li>
                     ))}
                 </ul>

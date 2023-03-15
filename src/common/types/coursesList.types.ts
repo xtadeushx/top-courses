@@ -1,6 +1,4 @@
-export interface ICoursesList {
-    courses: Course[]
-}
+
 
 export interface Course {
     id: string
@@ -18,9 +16,9 @@ export interface Course {
 }
 
 export interface Meta {
-    slug: string
-    skills: string[]
-    courseVideoPreview: CourseVideoPreview
+    slug?: string
+    skills?: string[]
+    courseVideoPreview?: CourseVideoPreview
 }
 
 export interface CourseVideoPreview {

@@ -1,4 +1,5 @@
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'hooks/hooks';
+
 import styles from './video.module.scss'
 interface IPlayerProps {
     poster: string
@@ -52,7 +53,7 @@ const Player: React.FC<IPlayerProps> = ({ poster, duration, link, autoPlay, cont
                 onMouseLeave={handleMouseLeave}
                 muted={muted}
             >
-                <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
+                <source src={link} type="video/mp4" />
             </video>
         </div>
     )

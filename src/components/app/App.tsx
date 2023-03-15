@@ -2,17 +2,16 @@ import Header from 'components/common/header/header';
 import styles from './app.module.scss'
 import { useEffect, useState } from 'react';
 import { courses } from 'services/services';
-import { ENV } from 'common/enums/enums';
 import previewCourses from '../../moch/cursess.json'
-import { ICoursesList } from 'common/types/coursesList.types';
+import { Course, } from 'common/types/coursesList.types';
 import Footer from 'components/common/footer/footer';
 import { CoursesLayout } from 'components/courses/courses-layout';
 
 const App = () => {
-  const [courses, setCourses] = useState<any>([])
-
+  console.log(previewCourses)
+  const [courses, setCourses] = useState<Course[]>([])
   useEffect(() => {
-    setCourses(previewCourses.courses)
+    setCourses(previewCourses)
   }, [])
 
 
@@ -24,7 +23,7 @@ const App = () => {
       />
       <CoursesLayout
         courses={courses}
-        loading="success"
+        loading="succeeded"
       />
       <Footer />
     </div>

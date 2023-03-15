@@ -32,6 +32,10 @@ const PaginatedCourses: React.FC<IPaginatedItemsProps> = ({ itemsPerPage, course
                 pageCount={pageCount}
                 previousLabel=""
                 className={styles.pagination}
+                activeClassName={styles.selected}
+                nextClassName={styles.next}
+                previousClassName={styles.previous}
+                pageClassName={styles.page}
             // renderOnZeroPageCount={null}
             />
         </>

@@ -3,26 +3,37 @@
     justify-content: center;
     align-items: center;
     list-style: none;
+}
 
-    li {
-        display: inline-block;
-        margin: 0 10px;
-        padding: 10px 15px;
-        font-size: medium;
-        border-radius: 100%;
-        color: var(--color-blue-200);
+.page {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 15px;
+    font-size: medium;
+    border-radius: 100%;
+    color: var(--color-blue-200);
 
-        &:hover {
-            cursor: pointer;
-            color: var(--color-white);
-            background-color: var(--color-blue-200);
-            transition: all 0.4s ease;
-        }
-
-
+    &:hover {
+        cursor: pointer;
+        color: var(--color-white);
+        background-color: var(--color-blue-200);
+        transition: all 0.4s ease;
     }
+}
 
-    & li.selected {
-        background-color: var(--color-blue-300);
+.selected {
+    background-color: var(--color-blue-300);
+    color: var(--color-white);
+    transition: all 0.4s ease;
+}
+
+.next,
+.previous {
+    background-color: transparent;
+
+    &:hover {
+        cursor: auto;
+        color: white;
+        background-color: white;
     }
 }

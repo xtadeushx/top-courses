@@ -14,7 +14,7 @@
 
 .header__logo {
   margin: 0;
-  color: var(--color-blue-400);
+  color: var(--color-blue-300);
   font-weight: 600;
   font-size: var(--font-size-500);
   font-family: 'Playfair Display', serif;
@@ -22,6 +22,10 @@
   display: flex;
   gap: 10px;
   align-items: center;
+
+  img {
+    color: var(--color-blue-400);
+  }
 }
 
 .header__nav {
@@ -90,14 +94,19 @@
   min-height: auto;
 }
 
-.book {
-  width: 20px;
-  height: 20px;
-  color: black;
-}
-
+.book,
 .profile {
   width: 20px;
   height: 20px;
-  color: black;
+  color: var(--color-blue-300);
+}
+
+ul {
+  padding-left: 15px;
+
+  li {
+    font-size: 14px;
+    text-transform: lowercase;
+    color: var(--color-blue-400);
+  }
 }

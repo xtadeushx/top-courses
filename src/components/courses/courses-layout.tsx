@@ -6,7 +6,6 @@ import { Course } from "common/types/coursesList.types";
 interface ICoursesLayoutProps {
     courses: Course[]
     loading: 'idle' | 'pending' | 'succeeded' | 'failed';
-
 }
 
 const CoursesLayout: React.FC<ICoursesLayoutProps> = ({ courses, loading }) => {
@@ -19,7 +18,6 @@ const CoursesLayout: React.FC<ICoursesLayoutProps> = ({ courses, loading }) => {
                     <ul className={styles['course-list']}>
                         {courses.map(el => (
                             <CoursesCard
-
                                 key={el.id}
                                 id={el.id}
                                 title={el.title}
@@ -30,11 +28,8 @@ const CoursesLayout: React.FC<ICoursesLayoutProps> = ({ courses, loading }) => {
                             />
                         ))}
                     </ul>
-
                 </section>)}
         </>
-
-
     )
 }
 

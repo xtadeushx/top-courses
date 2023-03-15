@@ -78,10 +78,9 @@ const Header: React.FC<IHeaderProps> = ({ user, logOut }) => {
             </li>
           </ul>
         </nav>
-
       </div>
     </header>
   );
 };
 
-export default Header;
+export { Header };

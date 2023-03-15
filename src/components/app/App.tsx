@@ -1,14 +1,16 @@
-import Header from 'components/common/header/header';
-import styles from './app.module.scss'
 import { useEffect, useState } from 'react';
-import { courses } from 'services/services';
-import previewCourses from '../../moch/cursess.json'
+import { Header } from 'components/common/header/header';
+import { Footer } from 'components/common/footer/footer';
+import { PaginatedCourses } from 'components/paginate/pagination';
+
 import { Course, } from 'common/types/coursesList.types';
-import Footer from 'components/common/footer/footer';
-import { CoursesLayout } from 'components/courses/courses-layout';
+
+import previewCourses from '../../moch/cursess.json';
+
+import styles from './app.module.scss';
 
 const App = () => {
-  console.log(previewCourses)
+
   const [courses, setCourses] = useState<Course[]>([])
   useEffect(() => {
     setCourses(previewCourses)
@@ -21,10 +23,13 @@ const App = () => {
         logOut={() => console.log('log out')}
         user='Dijon Dou'
       />
-      <CoursesLayout
+      <PaginatedCourses courses={courses}
+        loading='succeeded' itemsPerPage={10} />
+      {/* <CoursesLayout
         courses={courses}
-        loading="succeeded"
-      />
+        loading='succeeded'
+      /> 
+      */}
       <Footer />
     </div>
   )

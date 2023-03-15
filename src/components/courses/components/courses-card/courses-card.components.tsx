@@ -1,7 +1,22 @@
 import { Link } from 'hooks/hooks';
-import styles from './courses-card.module.scss';
+import { Meta } from 'common/types/course.types';
 
-const CoursesCard: React.FC = ({ title, previewImageLink, lessonsCount, meta, rating }: any) => {
+import styles from './courses-card.module.scss';
+import { CourseVideoPreview } from 'common/types/coursesList.types';
+import { Player } from 'components/common/video/video';
+
+interface ICoursesCardProps {
+    id: string
+    title: string
+    lessonsCount: number
+    rating: number,
+    preview: string
+    meta: Meta
+};
+
+const CoursesCard: React.FC<ICoursesCardProps> = ({ title, lessonsCount, preview, meta, rating, id }) => {
+    const { previewImageLink, duration, link } = meta.courseVideoPreview || { previewImageLink: '', duration: 10, link: '' }
+    const { skills } = meta
     return (
         <div data-test-id="curse-card" className={styles['curse-card']}>
             <div className={styles['curse-card__content']}>
@@ -13,36 +28,46 @@ const CoursesCard: React.FC = ({ title, previewImageLink, lessonsCount, meta, ra
                         {title}
                     </h3>
                     <div className={styles['curse-info__content']}>
-                        <img src={previewImageLink + '/cover.webp'} alt="" />
-                        <span
-                            data-test-id="curse-card-duration"
-                            className={styles['curse-info__duration']}
-                        >
-                            lessons: {lessonsCount}
-                        </span>
-                        <span
-                            data-test-id="curse-card-level"
-                            className={styles['curse-info__level']}
-                        >
-                            rating: {rating}
-                        </span>
+                        <Player
+                            duration={duration}
+                            poster={preview}
+                            link={link}
+                            autoPlay={false}
+                            controls={false}
+                            muted={true}
+                        />
+                        <div className={styles['curse-info_box']}>
+                            <span
+                                data-test-id="curse-card-lesson"
+                                className={styles['curse-card-lesson']}
+                            >
+                                lessons: {lessonsCount}
+                            </span>
+                            <span
+                                data-test-id="curse-card-rating"
+                                className={styles['curse-card-rating']}
+                            >
+                                rating: {rating}
+                            </span>
+                        </div>
                     </div>
                 </div>
-                <div className={styles['curse-skills']}>
-                    {meta?.skills?.map((el, index) => (
+                <ul className={styles['skills']}>
+                    {skills?.map((el, index) => (
                         <li key={index}>{el}</li>
                     ))}
-                </div>
+                </ul>
             </div>
             <Link
                 data-test-id="curse-card-link"
                 to={`courses:id`}
                 className="button"
             >
-                Studding a curse
+                begin studding
             </Link>
         </div>
     );
 }
 
 export { CoursesCard }
+

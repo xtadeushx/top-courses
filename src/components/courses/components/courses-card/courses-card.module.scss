@@ -1,26 +1,33 @@
-.trip-card {
+.curse-card {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   max-width: 320px;
   background-color: var(--color-white);
   border-radius: 1px;
   box-shadow: var(--shadow);
 }
 
-.trip-card__content {
+.curse-card__content {
   display: flex;
   flex-direction: column;
   gap: 15px;
   padding: 20px 30px;
 }
 
-/* trip-page */
+/* curse-page */
 
-.trip-page {
+.curse-page {
   padding: 60px 20px;
 }
 
-.trip {
+.curse-info_box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.curse {
   display: flex;
   flex-wrap: wrap;
   gap: 20px 50px;
@@ -29,13 +36,13 @@
   margin: 0 auto;
 }
 
-.trip__img {
+.curse__img {
   width: 400px;
   height: 400px;
   object-fit: cover;
 }
 
-.trip__content {
+.curse__content {
   display: flex;
   flex: 1 1 400px;
   flex-direction: column;
@@ -44,36 +51,39 @@
   padding-top: 20px;
 }
 
-.trip__description {
+.curse__description {
   opacity: 0.7;
 }
 
-.trip__button {
+.curse__button {
   max-width: 200px;
 }
 
-/* trip-info */
+/* curse-info */
 
-.trip-info {
+.curse-info {
   width: 100%;
   max-width: 300px;
   padding-bottom: 10px;
   border-bottom: 1px solid var(--color-gray);
 }
 
-.trip-info__title {
+.curse-info__title {
   margin: 0 0 5px;
   font-weight: 600;
-  font-size: var(--font-size-400);
+  font-size: 22px;
   font-family: 'Playfair Display', serif;
 }
 
-.trip-info__content {
+.curse-info__content {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   font-weight: 300;
 }
 
-.trip-info__duration {
+.curse-info__duration {
   min-width: 120px;
   padding-left: 25px;
   background-image: url('../../../../assets/images/calendar.svg');
@@ -82,15 +92,21 @@
   background-size: 15px;
 }
 
-.trip-info__level::before {
+.curse-card-lesson::before,
+.curse-card-rating::before {
   content: '•';
   margin-right: 10px;
   color: var(--color-blue-200);
 }
 
-/* trip-price */
+.curse-card-lesson,
+.curse-card-rating {
+  color: var(--color-blue-200);
+}
 
-.trip-price__value {
+/* curse-price */
+
+.curse-price__value {
   display: block;
   color: var(--color-blue-200);
   font-size: var(--font-size-600);

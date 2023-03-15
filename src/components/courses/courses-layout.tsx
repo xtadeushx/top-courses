@@ -1,8 +1,15 @@
 import Spinner from "components/common/loader/loader";
 import { CoursesCard } from "./components/courses-card/courses-card.components";
 import styles from './courses-layout.module.scss';
+import { Course } from "common/types/coursesList.types";
 
-const CoursesLayout: React.FC = ({ courses, loading }: any) => {
+interface ICoursesLayoutProps {
+    courses: Course[]
+    loading: 'idle' | 'pending' | 'succeeded' | 'failed';
+
+}
+
+const CoursesLayout: React.FC<ICoursesLayoutProps> = ({ courses, loading }) => {
     return (
         <>
             {loading === 'pending' ? (
@@ -12,12 +19,14 @@ const CoursesLayout: React.FC = ({ courses, loading }: any) => {
                     <ul className={styles['course-list']}>
                         {courses.map(el => (
                             <CoursesCard
+
                                 key={el.id}
+                                id={el.id}
                                 title={el.title}
-                                previewImageLink={el.previewImageLink}
                                 lessonsCount={el.lessonsCount}
                                 meta={el.meta}
                                 rating={el.rating}
+                                preview={el.previewImageLink}
                             />
                         ))}
                     </ul>

@@ -4,6 +4,7 @@ import { Player } from 'components/common/video/video';
 
 import styles from './courses-card.module.scss';
 import { AppRoute } from 'common/enums/enums';
+import { CourseSkills } from '../course-skills/course-skills';
 
 interface ICoursesCardProps {
   id: string;
@@ -11,7 +12,7 @@ interface ICoursesCardProps {
   lessonsCount: number;
   rating: number;
   preview: string;
-  meta?: Meta;
+  meta: Meta;
 }
 
 const CoursesCard: React.FC<ICoursesCardProps> = ({
@@ -62,9 +63,7 @@ const CoursesCard: React.FC<ICoursesCardProps> = ({
             </div>
           </div>
         </div>
-        <ul className={styles['skills']}>
-          {meta && meta.skills?.map((el, index) => <li key={index}>{el}</li>)}
-        </ul>
+        <CourseSkills meta={meta} className='dark' />
       </div>
       <Link
         data-test-id="curse-card-link"

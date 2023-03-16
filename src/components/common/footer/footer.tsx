@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { AiFillGithub } from 'react-icons/ai'
+import { AiFillGithub } from 'react-icons/ai';
 import heart from '../../../assets/images/heart.svg';
 import styles from './footer.module.scss';
 

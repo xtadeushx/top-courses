@@ -9,16 +9,13 @@ import { IHeaderProps } from './types';
 import computer from 'assets/header/computer-screen-with-windows-logo-svgrepo-com.svg';
 import styles from './header.module.scss';
 
-
 const Header: React.FC<IHeaderProps> = ({ user, logOut }) => {
-
-
   return (
     <header className={styles.header}>
       <div className={styles.header__inner}>
         <NavLink
           data-test-id="header-logo"
-          to='/'
+          to="/"
           className={styles.header__logo}
         >
           <img src={computer} alt="computer" width={40} height={40} />
@@ -29,7 +26,7 @@ const Header: React.FC<IHeaderProps> = ({ user, logOut }) => {
             <li className="nav-header__item" title="Bookings">
               <NavLink
                 data-test-id="header-bookings-link"
-                to='/courses'
+                to="/courses"
                 className={styles['nav-header__inner']}
               >
                 <span className="visually-hidden">Courses</span>
@@ -63,7 +60,7 @@ const Header: React.FC<IHeaderProps> = ({ user, logOut }) => {
                   <li className={styles['profile-nav__item']}>
                     <NavLink
                       data-test-id="header-profile-nav-sign-out"
-                      to='login'
+                      to="login"
                       onClick={logOut}
                       className={classNames(
                         styles['profile-nav__sign-out'],

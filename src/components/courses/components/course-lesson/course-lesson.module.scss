@@ -1,0 +1,26 @@
+.lesson {
+    display: inline-block;
+    width: 100%;
+    color: var(--color-white);
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    font-size: 18px;
+    color: var(--color-white);
+
+    &:hover {
+        cursor: pointer;
+    }
+
+}
+
+.lesson__title {
+    color: lightgray;
+    text-transform: uppercase;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.lesson__describe {
+    margin: 0px;
+}

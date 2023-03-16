@@ -9,6 +9,7 @@ import {
 import styles from './course-info.module.scss';
 import { CourseDescription } from '../course-description/course-description';
 import { CourseSkills } from '../course-skills/course-skills';
+import { CourseContent } from '../course-content/course-content';
 
 interface ICourseInfoProps {
     course: ICourse;
@@ -23,7 +24,8 @@ const CourseInfo: React.FC<ICourseInfoProps> = ({ course }) => {
         launchDate,
         duration: courseDuration,
         description,
-        meta
+        meta,
+
     } = course;
     const { link, previewImageLink, duration } = course.lessons[0];
     return (
@@ -58,17 +60,8 @@ const CourseInfo: React.FC<ICourseInfoProps> = ({ course }) => {
                     <CourseSkills meta={meta} className='light' />
                 </div>
             </div>
-            <Player
-                duration={duration}
-                poster={''}
-                link={link}
-                autoPlay={false}
-                controls={true}
-                muted={true}
-            />
-            <div className={styles['course__content']}>
-                <div className={styles['course__lessons-list']}>course-info</div>
-            </div>
+            <CourseContent duration={duration} link={link} lessons={course.lessons} />
+
         </section>
     );
 };

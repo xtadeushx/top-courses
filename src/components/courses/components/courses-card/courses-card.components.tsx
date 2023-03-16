@@ -1,10 +1,10 @@
 import { Link } from 'hooks/hooks';
 import { Meta } from 'common/types/course.types';
+import { AppRoute } from 'common/enums/enums';
+import { CourseSkills } from '../course-skills/course-skills';
 import { Player } from 'components/common/video/video';
 
 import styles from './courses-card.module.scss';
-import { AppRoute } from 'common/enums/enums';
-import { CourseSkills } from '../course-skills/course-skills';
 
 interface ICoursesCardProps {
   id: string;

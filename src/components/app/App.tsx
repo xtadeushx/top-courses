@@ -26,7 +26,7 @@ const App = () => {
     <div className={styles.app}>
       <Header
         logOut={() => console.log('log out')}
-        user='Dijon Dou'
+        user='Olexandr Unknown'
       />
       <Routes>
         <Route path={AppRoute.ROOT}

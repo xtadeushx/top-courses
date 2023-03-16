@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './course-lesson.module.scss'
 import { Lesson } from 'common/types/course.types'
+import { formateTime } from 'helpers/helpers'
 
 
 interface ICourseLessonProps {
@@ -16,7 +17,7 @@ const CourseLesson: React.FC<ICourseLessonProps> = ({ lesson }) => {
                     <p className={styles["lesson__describe"]}>{title}</p>
                 </div>
 
-                <p className={styles["lesson__duration"]}>{duration}</p>
+                <p className={styles["lesson__duration"]}>{formateTime(duration)}</p>
 
             </li>
             <hr />

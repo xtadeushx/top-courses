@@ -22,9 +22,9 @@
 }
 
 .curse-info_box {
-  width: 100%;
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 
 .curse {
@@ -78,8 +78,8 @@
 .curse-info__content {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   font-weight: 300;
 }
 

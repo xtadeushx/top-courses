@@ -1,39 +1,39 @@
 .pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
 }
 
 .page {
-    display: inline-block;
-    margin: 0 10px;
-    padding: 10px 15px;
-    font-size: medium;
-    border-radius: 100%;
-    color: var(--color-blue-200);
+  display: inline-block;
+  margin: 0 10px;
+  padding: 10px 15px;
+  color: var(--color-blue-200);
+  font-size: medium;
+  border-radius: 100%;
 
-    &:hover {
-        cursor: pointer;
-        color: var(--color-white);
-        background-color: var(--color-blue-200);
-        transition: all 0.4s ease;
-    }
+  &:hover {
+    color: var(--color-white);
+    background-color: var(--color-blue-200);
+    cursor: pointer;
+    transition: all 0.4s ease;
+  }
 }
 
 .selected {
-    background-color: var(--color-blue-300);
-    color: var(--color-white);
-    transition: all 0.4s ease;
+  color: var(--color-white);
+  background-color: var(--color-blue-300);
+  transition: all 0.4s ease;
 }
 
 .next,
 .previous {
-    background-color: transparent;
+  background-color: transparent;
 
-    &:hover {
-        cursor: auto;
-        color: white;
-        background-color: white;
-    }
+  &:hover {
+    color: white;
+    background-color: white;
+    cursor: auto;
+  }
 }

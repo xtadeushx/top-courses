@@ -48,7 +48,6 @@ class Http {
         console.log(error);
       }
       // const token = this._storage.getItem(StorageKey.TOKEN);
-
     }
 
     return headers;

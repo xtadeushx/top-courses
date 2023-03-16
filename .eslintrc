@@ -1,11 +1,11 @@
 {
-    "env": {
-        "browser": true,
-        "es6": true,
-        "node": true
-    },
-    "extends": ["airbnb/base", "airbnb/hooks"],
-    "rules": {
-        "linebreak-style": "warn"
-    }
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": ["airbnb/base", "airbnb/hooks"],
+  "rules": {
+    "linebreak-style": "warn"
+  }
 }

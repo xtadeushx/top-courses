@@ -15,5 +15,4 @@ const courses = new Courses({
   http,
 });
 
-
 export { http, storage, courses };

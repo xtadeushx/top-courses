@@ -1,4 +1,3 @@
-
 export const formateDate = (date: string) => {
   const event = new Date(date).toLocaleDateString('en-US', {
     year: 'numeric',
@@ -7,5 +6,3 @@ export const formateDate = (date: string) => {
   });
   return event;
 };
-
-

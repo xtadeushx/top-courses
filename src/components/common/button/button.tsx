@@ -1,6 +1,8 @@
-import styles from './button.module.scss';
+import { clsx } from 'clsx';
+
 import { TButtonProps } from './types';
-import clsx from 'clsx';
+
+import styles from './button.module.scss';
 
 const Button = ({
   children,

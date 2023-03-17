@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 
 export type TButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   children: React.ReactNode;

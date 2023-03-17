@@ -1,23 +1,26 @@
-import { useEffect, useParams, useState } from 'hooks/hooks';
+import { useFetch, useParams } from 'hooks/hooks';
 import { CourseInfo } from '../course-info/course-info';
-import currentCourse from '../../../../mock/course.json'
+import { ENV } from 'common/enums/enums';
+import Spinner from 'components/common/loader/loader';
+
 import styles from './course-details.module.scss';
-import { ICourse } from 'common/types/course.types';
 
 const CourseDetails: React.FC = () => {
-    const [course, setCourse] = useState<ICourse | null>(null)
-    const { id } = useParams();
-    useEffect(() => {
-        setCourse(currentCourse)
-    }, [])
+  const { id } = useParams();
+  const {
+    loading,
+    response: course,
+    error,
+  } = useFetch(`${ENV.API_PATH}/${id}`, 'id');
+  if (!course && loading === 'pending') return <Spinner isOverflow />;
+  if (!course && error)
+    return <h3>{`Server response with  ${error.toString()}`}</h3>;
 
-    return (
-        <div className={styles['course-page']}>
-            {course && (
-                <CourseInfo course={course} />
-            )}
-        </div>
-    );
+  return (
+    <div className={styles['course-page']}>
+      {course && <CourseInfo course={course} />}
+    </div>
+  );
 };
 
 export { CourseDetails };

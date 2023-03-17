@@ -1,5 +1,5 @@
 import { useState, useRef } from 'hooks/hooks';
-
+import ReactHlsPlayer from '@gumlet/react-hls-player';
 import styles from './video.module.scss';
 interface IPlayerProps {
   poster: string;
@@ -44,24 +44,19 @@ const Player: React.FC<IPlayerProps> = ({
     }
   };
   return (
-    <div className={styles['curse-info_video']}>
-      <video
-        className={styles.video}
-        onTimeUpdate={handleProgress}
-        ref={videoRef}
-        width="100%"
-        height="100%"
-        disableRemotePlayback={false}
-        controls={controls}
-        autoPlay={autoPlay}
-        poster={poster + '/cover.webp'}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        muted={muted}
-      >
-        <source src={link} type="video/mp4" />
-      </video>
-    </div>
+    <ReactHlsPlayer
+      src={link}
+      autoPlay={autoPlay}
+      controls={controls}
+      width="100%"
+      height="100%"
+      playerRef={videoRef}
+      poster={poster + '/cover.webp'}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      muted={muted}
+      className={styles.video}
+    />
   );
 };
 

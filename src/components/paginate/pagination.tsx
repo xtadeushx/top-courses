@@ -3,16 +3,19 @@ import { useState } from 'hooks/hooks';
 import { CoursesLayout } from 'components/courses/courses-layout';
 import { Course } from 'common/types/coursesList.types';
 import styles from './pagination.module.scss';
+import Spinner from 'components/common/loader/loader';
 interface IPaginatedItemsProps {
   itemsPerPage: number;
   courses: Course[];
   loading: 'idle' | 'pending' | 'succeeded' | 'failed';
+  error: any;
 }
 
 const PaginatedCourses: React.FC<IPaginatedItemsProps> = ({
   itemsPerPage,
   courses,
   loading,
+  error,
 }) => {
   const [itemOffset, setItemOffset] = useState(0);
 
@@ -25,9 +28,13 @@ const PaginatedCourses: React.FC<IPaginatedItemsProps> = ({
     setItemOffset(newOffset);
   };
 
+  if (!courses && loading === 'pending') return <Spinner isOverflow />;
+  if (!courses && error)
+    return <h3>{`Server response with  ${error.toString()}`}</h3>;
+
   return (
     <>
-      <CoursesLayout courses={currentItems} loading={loading} />
+      <CoursesLayout courses={currentItems} />
       <ReactPaginate
         breakLabel="..."
         nextLabel=""
@@ -40,7 +47,6 @@ const PaginatedCourses: React.FC<IPaginatedItemsProps> = ({
         nextClassName={styles.next}
         previousClassName={styles.previous}
         pageClassName={styles.page}
-        // renderOnZeroPageCount={null}
       />
     </>
   );

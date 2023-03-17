@@ -6,6 +6,8 @@ class Http {
   private _storage;
   constructor({ storage }: any) {
     this._storage = storage;
+    console.log('constructor')
+    this._fetchToken();
   }
 
   load(url: string, options = {}) {
@@ -31,6 +33,25 @@ class Http {
       .catch(this._throwError);
   }
 
+  async _fetchToken() {
+    let auth = localStorage.getItem('token');
+    if (auth) return;
+    try {
+      const resp = await fetch(
+        'https://api.wisey.app/api/v1/auth/anonymous?platform=subscriptions'
+      );
+      if (!resp.ok) {
+        throw new Error(`${resp.status} server error`);
+      }
+      const token = await resp.json();
+      localStorage.setItem('token', JSON.stringify(token.token));
+      return token;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
   async _getHeaders({ hasAuth, contentType }: any) {
     const headers = new Headers();
 
@@ -39,15 +60,17 @@ class Http {
     }
 
     if (hasAuth) {
-      let token;
       try {
-        token = this._storage.getItem(StorageKey.TOKEN);
-        if (!token) return;
+        let token = this._storage.getItem(StorageKey.TOKEN);
+        if (!token) {
+          let data = await this._fetchToken()
+          token = await data.token
+        }
         headers.append(HttpHeader.AUTHORIZATION, `Bearer ${token}`);
+        console.log('token', token)
       } catch (error) {
         console.log(error);
       }
-      // const token = this._storage.getItem(StorageKey.TOKEN);
     }
 
     return headers;

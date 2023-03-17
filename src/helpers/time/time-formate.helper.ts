@@ -8,8 +8,10 @@ export const formateTime = (date: number) => {
   let seconds = Math.round(date / DAY).toString();
 
   hours = +hours < 10 ? '0' + hours : hours;
+
   minutes = +minutes < 10 ? '0' + minutes : minutes;
   seconds = +seconds < 10 ? '0' + seconds : seconds;
+
   result = `${hours}:${minutes}:${seconds}`;
 
   return result;

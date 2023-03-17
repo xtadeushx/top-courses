@@ -80,16 +80,61 @@
   font-size: 22px;
 
   & span {
-    color: var(--color-blue-300);
+    // color: var(--color-blue-300);
     font-weight: 600;
-    font-size: 25px;
+    font-size: 33px;
   }
-}
-
-.course__preview-description {
 }
 
 .course__main-info {
   color: var(--color-white);
   font-size: 18px;
+}
+
+.red {
+  color: red;
+  font-weight: 600;
+  font-size: medium;
+}
+
+.green {
+  animation: neonAnim 2s alternate-reverse infinite;
+  color: #F300FF;
+}
+
+@keyframes neonAnim {
+  from {
+    text-shadow:
+      0 0 10px rgba(243, 0, 255, .7),
+      0 0 40px rgba(243, 0, 255, .7),
+      0 0 100px rgba(243, 0, 255, .7);
+  }
+
+  to {
+    text-shadow:
+      0 0 5px rgba(243, 0, 255, .7),
+      0 0 20px rgba(243, 0, 255, .7),
+      0 0 60px rgba(243, 0, 255, .7);
+  }
+}
+
+.yellow {
+  animation: neonAnimYellow 2s alternate-reverse infinite;
+  color: #DBFF00;
+}
+
+@keyframes neonAnimYellow {
+  from {
+    text-shadow:
+      0 0 10px rgba(219, 255, 0, .7),
+      0 0 40px rgba(219, 255, 0, .7),
+      0 0 100px rgba(219, 255, 0, .7);
+  }
+
+  to {
+    text-shadow:
+      0 0 5px rgba(219, 255, 0, .7),
+      0 0 20px rgba(219, 255, 0, .7),
+      0 0 60px rgba(219, 255, 0, .7);
+  }
 }

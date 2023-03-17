@@ -62,11 +62,13 @@ const CoursesCard: React.FC<ICoursesCardProps> = ({
                 data-test-id="curse-card-rating"
                 className={styles['curse-card-rating']}
               >
-                rating: <span className={classNames({
+                rating:
+                <span className={classNames({
                   [styles.red]: rating < 3,
                   [styles.yellow]: rating >= 3 && rating < 5,
                   [styles.green]: rating >= 5,
-                })}>{rating}</span>
+                })}>{rating}
+                </span>
               </span>
             </div>
           </div>

@@ -67,12 +67,12 @@ const CoursesCard: React.FC<ICoursesCardProps> = ({
       </div>
       <Link
         data-test-id="curse-card-link"
-        to={AppRoute.COURSE_BY_ID}
+        to={`${AppRoute.COURSES}/${id}`}
         className="button"
       >
         begin studding
       </Link>
-    </div>
+    </div >
   );
 };
 

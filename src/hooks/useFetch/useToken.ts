@@ -1,18 +1,19 @@
+import { ENV, StorageKey } from "common/enums/enums";
+import { storage } from "services/services";
 
 const useToken = async () => {
 
-    const auth = localStorage.getItem('token');
+    const auth = storage.getItem(StorageKey.TOKEN);
     if (auth) return;
     try {
         const resp = await fetch(
-            'https://api.wisey.app/api/v1/auth/anonymous?platform=subscriptions'
+            ENV.TOKEN_PATH
         );
         if (!resp.ok) {
             throw new Error(`${resp.status} server error`);
         }
         const token = await resp.json();
-        // console.log('token', token)
-        localStorage.setItem('token', JSON.stringify(token.token));
+        localStorage.setItem(StorageKey.TOKEN, JSON.stringify(token.token));
     } catch (er) {
         console.log(er)
     }

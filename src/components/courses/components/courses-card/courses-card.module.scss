@@ -91,3 +91,59 @@
   font-size: var(--font-size-600);
   line-height: 1;
 }
+
+
+.curse-info__video-wrapper {
+  width: 100%;
+  min-height: 175px;
+}
+
+.red {
+  color: red;
+  font-weight: 600;
+  font-size: medium;
+}
+
+.green {
+  animation: neonAnim 2s alternate-reverse infinite;
+  color: #F300FF;
+
+}
+
+@keyframes neonAnim {
+  from {
+    text-shadow:
+      0 0 10px rgba(243, 0, 255, .7),
+      0 0 40px rgba(243, 0, 255, .7),
+      0 0 100px rgba(243, 0, 255, .7);
+  }
+
+  to {
+    text-shadow:
+      0 0 5px rgba(243, 0, 255, .7),
+      0 0 20px rgba(243, 0, 255, .7),
+      0 0 60px rgba(243, 0, 255, .7);
+  }
+}
+
+
+.yellow {
+  animation: neonAnim 2s alternate-reverse infinite;
+  color: #DBFF00;
+}
+
+@keyframes neonAnim {
+  from {
+    text-shadow:
+      0 0 10px rgba(219, 255, 0, .7),
+      0 0 40px rgba(219, 255, 0, .7),
+      0 0 100px rgba(219, 255, 0, .7);
+  }
+
+  to {
+    text-shadow:
+      0 0 5px rgba(219, 255, 0, .7),
+      0 0 20px rgba(219, 255, 0, .7),
+      0 0 60px rgba(219, 255, 0, .7);
+  }
+}

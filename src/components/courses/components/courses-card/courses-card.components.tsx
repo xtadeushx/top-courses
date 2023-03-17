@@ -5,6 +5,7 @@ import { CourseSkills } from '../course-skills/course-skills';
 import { Player } from 'components/common/video/video';
 
 import styles from './courses-card.module.scss';
+import classNames from 'classnames';
 
 interface ICoursesCardProps {
   id: string;
@@ -39,14 +40,17 @@ const CoursesCard: React.FC<ICoursesCardProps> = ({
             {title}
           </h3>
           <div className={styles['curse-info__content']}>
-            <Player
-              duration={duration}
-              poster={preview}
-              link={link}
-              autoPlay={false}
-              controls={false}
-              muted={true}
-            />
+            <div className={styles['curse-info__video-wrapper']}>
+              <Player
+                duration={duration}
+                poster={preview}
+                link={link}
+                autoPlay={false}
+                controls={false}
+                muted={true}
+              />
+            </div>
+
             <div className={styles['curse-info_box']}>
               <span
                 data-test-id="curse-card-lesson"
@@ -58,7 +62,11 @@ const CoursesCard: React.FC<ICoursesCardProps> = ({
                 data-test-id="curse-card-rating"
                 className={styles['curse-card-rating']}
               >
-                rating: {rating}
+                rating: <span className={classNames({
+                  [styles.red]: rating < 3,
+                  [styles.yellow]: rating >= 3 && rating < 5,
+                  [styles.green]: rating >= 5,
+                })}>{rating}</span>
               </span>
             </div>
           </div>
@@ -72,7 +80,7 @@ const CoursesCard: React.FC<ICoursesCardProps> = ({
       >
         begin studding
       </Link>
-    </div>
+    </div >
   );
 };
 

@@ -40,11 +40,11 @@ const CourseInfo: React.FC<ICourseInfoProps> = ({ course }) => {
           <img src={poster + '/cover.webp'} alt="title" />
           <div className={styles['course__preview-action']}>
             <span>
-              {' '}
+
               <AiOutlineLike className={styles.like} /> 0
             </span>
             <span>
-              {' '}
+
               <AiOutlineDislike className={styles.disLike} /> 0
             </span>
           </div>

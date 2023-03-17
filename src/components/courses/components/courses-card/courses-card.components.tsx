@@ -63,7 +63,7 @@ const CoursesCard: React.FC<ICoursesCardProps> = ({
             </div>
           </div>
         </div>
-        <CourseSkills meta={meta} className='dark' />
+        <CourseSkills meta={meta} className="dark" />
       </div>
       <Link
         data-test-id="curse-card-link"
@@ -72,7 +72,7 @@ const CoursesCard: React.FC<ICoursesCardProps> = ({
       >
         begin studding
       </Link>
-    </div >
+    </div>
   );
 };
 

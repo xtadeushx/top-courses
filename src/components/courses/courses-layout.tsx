@@ -5,13 +5,11 @@ import { Course } from 'common/types/coursesList.types';
 
 interface ICoursesLayoutProps {
   courses: Course[];
-
 }
 
 const CoursesLayout: React.FC<ICoursesLayoutProps> = ({ courses }) => {
   return (
     <>
-
       <section className={styles['course']}>
         <ul className={styles['course-list']}>
           {courses.map((el) => (

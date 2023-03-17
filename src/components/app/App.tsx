@@ -11,9 +11,7 @@ import { CourseDetails } from 'components/courses/components/course-details/cour
 import styles from './app.module.scss';
 
 const App = () => {
-  const { loading, response, error } = useFetch(
-    ENV.API_PATH
-  );
+  const { loading, response, error } = useFetch(ENV.API_PATH);
   if (!response) return;
   const { courses } = response;
 

@@ -1,9 +1,9 @@
-import { DAY, HOUR, MINUTE } from "helpers/constants/constants.helpers";
+import { DAY, HOUR, MINUTE } from 'helpers/constants/constants.helpers';
 
 export const formateTime = (date: number) => {
   let result;
 
-  let hours = (Math.round(date / MINUTE)).toString();
+  let hours = Math.round(date / MINUTE).toString();
   let minutes = Math.round(date / HOUR).toString();
   let seconds = Math.round(date / DAY).toString();
 
@@ -16,5 +16,3 @@ export const formateTime = (date: number) => {
 
   return result;
 };
-
-

@@ -1,5 +1,4 @@
 import { useState, useRef } from 'hooks/hooks';
-
 import styles from './video.module.scss';
 interface IPlayerProps {
   poster: string;
@@ -59,7 +58,7 @@ const Player: React.FC<IPlayerProps> = ({
         onMouseLeave={handleMouseLeave}
         muted={muted}
       >
-        <source src={link} type="video/mp4" />
+        <source src={link} type="application/x-mpegURL" />
       </video>
     </div>
   );

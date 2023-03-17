@@ -8,14 +8,14 @@ interface IPaginatedItemsProps {
   itemsPerPage: number;
   courses: Course[];
   loading: 'idle' | 'pending' | 'succeeded' | 'failed';
-  error: any
+  error: any;
 }
 
 const PaginatedCourses: React.FC<IPaginatedItemsProps> = ({
   itemsPerPage,
   courses,
   loading,
-  error
+  error,
 }) => {
   const [itemOffset, setItemOffset] = useState(0);
 
@@ -28,12 +28,9 @@ const PaginatedCourses: React.FC<IPaginatedItemsProps> = ({
     setItemOffset(newOffset);
   };
 
-  if (!courses && loading === 'pending') return (
-    <Spinner isOverflow />
-  )
-  if (!courses && error) return (
-    <h3>{`Server response with  ${error.toString()}`}</ h3 >
-  )
+  if (!courses && loading === 'pending') return <Spinner isOverflow />;
+  if (!courses && error)
+    return <h3>{`Server response with  ${error.toString()}`}</h3>;
 
   return (
     <>
@@ -52,7 +49,6 @@ const PaginatedCourses: React.FC<IPaginatedItemsProps> = ({
         pageClassName={styles.page}
       />
     </>
-
   );
 };
 export { PaginatedCourses };

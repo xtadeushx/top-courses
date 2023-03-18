@@ -28,8 +28,9 @@ const CourseContent: React.FC<ICourseContentProps> = ({
           controls={true}
           muted={false}
         />
+        <span className={styles['tooltip-text__up']}>to up speed press 'W' </span>
+        <span className={styles['tooltip-text__down']}>to down speed press 'Q' </span>
       </div>
-
       <ul className={styles['course__lessons-list']}>
         {lessons &&
           lessons.map((lesson) => (

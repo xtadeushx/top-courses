@@ -17,7 +17,6 @@ const Player: React.FC<IPlayerProps> = ({
   autoPlay,
   controls,
   muted,
-
 }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(duration);
@@ -44,14 +43,14 @@ const Player: React.FC<IPlayerProps> = ({
   }, [playbackRate]);
 
   const handelSpeed = (e: any) => {
-    if (e.code === 'KeyQ' && playbackRate <= 0.25) {
-      setPlaybackRate(prev => prev + 0.25)
-      console.log(`speed was increased to ${playbackRate}`)
-    }
     if (e.code === 'KeyW' && playbackRate >= 0.5) {
       setPlaybackRate(prev => prev - 0.25)
       console.log(`speed was decrees to ${playbackRate}`)
-    }
+    } else
+      if (e.code === 'KeyQ' && playbackRate < 2.25) {
+        setPlaybackRate(prev => prev + 0.25)
+        console.log(`speed was increase to ${playbackRate}`)
+      }
   }
 
   const handleProgress = () => {
@@ -64,26 +63,23 @@ const Player: React.FC<IPlayerProps> = ({
   };
   return (
     <>
-      <div className={styles['video-wrapper']}>
-        <ReactHlsPlayer
-          src={link}
-          autoPlay={autoPlay}
-          controls={controls}
-          width="100%"
-          height="100%"
-          playerRef={videoRef}
-          poster={poster + '/cover.webp'}
-          // onMouseEnter={handleMouseEnter}
-          // onMouseLeave={handleMouseLeave}
-          muted={muted}
-          className={styles['video']}
-          onKeyDown={handelSpeed}
+      <ReactHlsPlayer
+        src={link}
+        autoPlay={autoPlay}
+        controls={controls}
+        onKeyUpCapture={handelSpeed}
+        width="100%"
+        height="100%"
+        playerRef={videoRef}
+        poster={poster + '/cover.webp'}
+        // onMouseEnter={handleMouseEnter}
+        // onMouseLeave={handleMouseLeave}
+        muted={muted}
+        className={styles['video']}
+      />
 
-        />
-      </div>
 
-      <span className={styles['tooltip-text__up']}>to up speed press 'W' </span>
-      <span className={styles['tooltip-text__down']}>to down speed press 'Q' </span>
+
     </>
   );
 };

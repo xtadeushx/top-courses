@@ -19,19 +19,21 @@ const CourseContent: React.FC<ICourseContentProps> = ({
   link,
   poster = '',
   lessons,
-  previewImageLink,
+  // previewImageLink,
   order,
   status,
   handelLessonsOrder,
 }) => {
+  const { previewImageLink } = lessons[order]
+
   return (
     <div className={styles['course__content']}>
       <div className={styles['course__content-video']}>
         <Player
           duration={duration}
-          poster={previewImageLink + '/' + order + '.webp'}
+          poster={`${previewImageLink}/lesson-${order}.webp`}
           link={link}
-          autoPlay={true}
+          autoPlay={false}
           controls={true}
           muted={false}
           status={status}

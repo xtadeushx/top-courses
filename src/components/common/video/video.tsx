@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'hooks/hooks';
 import ReactHlsPlayer from '@gumlet/react-hls-player';
 import styles from './video.module.scss';
+const BROKEN_IMG_PATH = 'https://i.postimg.cc/RZvT9tdr/guerrillabuzz-crypto-pr-Wtol-M5hsj14-unsplash.jpg'
 interface IPlayerProps {
   poster: string;
   duration: number;
@@ -61,6 +62,12 @@ const Player: React.FC<IPlayerProps> = ({
     }
   };
 
+  const imageOnError = () => {
+    if (videoRef.current !== null) {
+      const videoPlayer = videoRef.current as HTMLVideoElement;
+      videoPlayer.poster = BROKEN_IMG_PATH;
+    }
+  };
   return (
     <>
       <ReactHlsPlayer
@@ -76,7 +83,8 @@ const Player: React.FC<IPlayerProps> = ({
         onMouseLeave={handleMouseLeave}
         muted={muted}
         className={styles['video']}
-
+        onError={imageOnError}
+        onLoad={() => console.log('video has already been loaded')}
       />
     </>
   );

@@ -1,11 +1,7 @@
-import { Meta } from 'common/types/course.types';
+
+import { IMetaProps } from './types';
 
 import styles from './course-skills.module.scss';
-
-interface IMetaProps {
-  meta: Meta;
-  className: string;
-}
 
 const CourseSkills: React.FC<IMetaProps> = ({ meta, className }) => {
   return (

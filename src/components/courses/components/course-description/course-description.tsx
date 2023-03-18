@@ -1,18 +1,16 @@
-import React, { PropsWithChildren } from 'react';
 import { MdOutlineLanguage, MdOutlineDateRange } from 'react-icons/md';
 import { AiOutlineClockCircle, AiOutlineVideoCamera } from 'react-icons/ai';
 
-import styles from './course-description.module.scss';
 import { formateDate, formateTime } from 'helpers/helpers';
 
-interface ICourseDescriptionProps {
-  duration: number;
-  lessons: any;
-  launchDate: string;
-}
-const CourseDescription: React.FC<
-  ICourseDescriptionProps & PropsWithChildren
-> = ({ duration, lessons, launchDate }) => {
+import styles from './course-description.module.scss';
+import { ICourseDescriptionProps } from './types';
+
+const CourseDescription: React.FC<ICourseDescriptionProps> = ({
+  duration,
+  lessons,
+  launchDate,
+}) => {
   return (
     <div className={styles['course__preview-duration']}>
       <div className={styles['course__preview-duration']}>

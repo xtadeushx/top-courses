@@ -1,5 +1,6 @@
-import { ICourseLockerProps } from './types';
 import { AiFillLock } from 'react-icons/ai';
+
+import { ICourseLockerProps } from './types';
 
 import styles from './course-locker.module.scss';
 

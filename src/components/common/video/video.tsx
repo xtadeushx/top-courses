@@ -1,16 +1,12 @@
-import { useState, useRef, useEffect } from 'hooks/hooks';
 import ReactHlsPlayer from '@gumlet/react-hls-player';
+
+import { useState, useRef, useEffect } from 'hooks/hooks';
+
+import { IPlayerProps } from './types';
+
 import styles from './video.module.scss';
-const BROKEN_IMG_PATH = 'https://i.postimg.cc/RZvT9tdr/guerrillabuzz-crypto-pr-Wtol-M5hsj14-unsplash.jpg'
-interface IPlayerProps {
-  poster: string;
-  duration: number;
-  link: string;
-  controls: boolean;
-  autoPlay: boolean;
-  muted: boolean;
-  status: 'locked' | 'unlocked';
-}
+import { BROKEN_IMG_PATH } from './constants/constants';
+
 
 const Player: React.FC<IPlayerProps> = ({
   poster,

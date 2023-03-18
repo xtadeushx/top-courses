@@ -17,7 +17,7 @@
   max-width: 100%;
   max-height: 380px;
   margin-top: 0;
-  padding: 0 5px;
+  padding: 5px 5px;
   overflow-y: scroll;
   list-style: none;
 }
@@ -46,34 +46,6 @@
   position: relative;
   height: 100%;
 }
-
-
-.tooltip-text__up {
-  bottom: 0px;
-}
-
-.tooltip-text__down {
-  bottom: 40px;
-}
-
-
-@keyframes appear {
-  0% {
-    /* pushes the sun down past the viewport */
-    opacity: 0;
-  }
-
-  50% {
-    /* returns the sun to its default position */
-    opacity: 1;
-  }
-
-  100% {
-    /* returns the sun to its default position */
-    opacity: 0;
-  }
-}
-
 
 .tooltip-text__subscribe {
   display: inline-block;

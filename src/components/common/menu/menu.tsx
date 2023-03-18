@@ -3,12 +3,10 @@ import { MdOutlineLanguage } from 'react-icons/md';
 import { CgProfile } from 'react-icons/cg';
 import { NavLink } from 'hooks/hooks';
 
+import { IMenuProps } from './types';
+
 import styles from './menu.module.scss';
 
-interface IMenuProps {
-    user?: string;
-    logOut?: () => void
-}
 const Menu: React.FC<IMenuProps> = ({ user, logOut }) => {
     return (
         <nav data-test-id="header-nav" className={styles.header__nav}>

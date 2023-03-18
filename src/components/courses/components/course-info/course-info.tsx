@@ -48,7 +48,6 @@ const CourseInfo: React.FC<ICourseInfoProps> = ({ course }) => {
                 [styles.green]: rating >= 5,
               })}
             >
-              {' '}
               {rating}
             </span>
           </span>

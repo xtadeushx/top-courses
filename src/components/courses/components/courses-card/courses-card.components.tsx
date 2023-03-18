@@ -1,20 +1,14 @@
 import { Link } from 'hooks/hooks';
-import { Meta } from 'common/types/course.types';
+import classNames from 'classnames';
 import { AppRoute } from 'common/enums/enums';
 import { CourseSkills } from '../course-skills/course-skills';
 import { Player } from 'components/common/video/video';
 
-import styles from './courses-card.module.scss';
-import classNames from 'classnames';
 
-interface ICoursesCardProps {
-  id: string;
-  title: string;
-  lessonsCount: number;
-  rating: number;
-  preview: string;
-  meta: Meta;
-}
+import { ICoursesCardProps } from './types';
+import styles from './courses-card.module.scss';
+
+
 
 const CoursesCard: React.FC<ICoursesCardProps> = ({
   title,
@@ -48,6 +42,7 @@ const CoursesCard: React.FC<ICoursesCardProps> = ({
                 autoPlay={false}
                 controls={false}
                 muted={true}
+                status='unlocked'
               />
             </div>
 

@@ -40,7 +40,7 @@ const CourseContent: React.FC<ICourseContentProps> = ({
 
         <CourseLocker status={status} />
 
-        <span className={styles['tooltip-text__subscribe']}>{order} {title} | {formateTime(duration)}</span>
+        <span className={styles['tooltip-text__subscribe']}>{order - 1} {title} | {formateTime(duration)}</span>
       </div>
       <ul className={styles['course__lessons-list']}>
         {lessons &&

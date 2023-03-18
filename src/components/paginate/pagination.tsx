@@ -1,15 +1,11 @@
 import ReactPaginate from 'react-paginate';
 import { useState } from 'hooks/hooks';
 import { CoursesLayout } from 'components/courses/courses-layout';
-import { Course } from 'common/types/coursesList.types';
-import styles from './pagination.module.scss';
 import Spinner from 'components/common/loader/loader';
-interface IPaginatedItemsProps {
-  itemsPerPage: number;
-  courses: Course[];
-  loading: 'idle' | 'pending' | 'succeeded' | 'failed';
-  error: any;
-}
+
+import { IPaginatedItemsProps } from './types';
+
+import styles from './pagination.module.scss';
 
 const PaginatedCourses: React.FC<IPaginatedItemsProps> = ({
   itemsPerPage,

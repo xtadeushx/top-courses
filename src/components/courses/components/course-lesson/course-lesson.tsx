@@ -16,7 +16,6 @@ const CourseLesson: React.FC<ICourseLessonProps> = ({ lesson, onclick }) => {
           <p className={styles['lesson__title']}>Lesson {order}</p>
           <p className={styles['lesson__describe']}>{title}</p>
         </div>
-
         <p className={styles['lesson__duration']}>{formateTime(duration)}</p>
       </li>
       <hr />

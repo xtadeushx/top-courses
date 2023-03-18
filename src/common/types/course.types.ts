@@ -31,7 +31,7 @@ export interface Lesson {
   duration: number;
   order: number;
   type: string;
-  status: string;
+  status: 'locked' | 'unlocked';
   link: string;
   previewImageLink: string;
   meta: any;

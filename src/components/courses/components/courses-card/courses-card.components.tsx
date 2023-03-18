@@ -43,7 +43,7 @@ const CoursesCard: React.FC<ICoursesCardProps> = ({
             <div className={styles['curse-info__video-wrapper']}>
               <Player
                 duration={duration}
-                poster={preview}
+                poster={preview + '/cover.webp'}
                 link={link}
                 autoPlay={false}
                 controls={false}

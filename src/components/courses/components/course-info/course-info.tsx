@@ -77,13 +77,9 @@ const CourseInfo: React.FC<ICourseInfoProps> = ({ course }) => {
         </div>
       </div>
       <CourseContent
-        duration={duration}
-        link={link}
         lessons={lessons}
-        previewImageLink={previewImageLink}
-        order={order}
+        currentLesson={currentLesson}
         handelLessonsOrder={handelLessonsOrder}
-        status={status}
       />
     </section>
   );

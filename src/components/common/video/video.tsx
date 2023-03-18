@@ -37,6 +37,7 @@ const Player: React.FC<IPlayerProps> = ({
       videoPlayer.play();
     }
   };
+
   const handleMouseLeave = () => {
     if (videoRef.current !== null) {
       const videoPlayer = videoRef.current as HTMLVideoElement;
@@ -73,7 +74,7 @@ const Player: React.FC<IPlayerProps> = ({
       <ReactHlsPlayer
         src={link}
         autoPlay={autoPlay && status === 'unlocked'}
-        controls={controls}
+        controls={controls && status === 'unlocked'}
         onKeyUpCapture={handelSpeed}
         width="100%"
         height="100%"

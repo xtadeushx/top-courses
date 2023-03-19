@@ -1,4 +1,12 @@
 {
-    "singleQuote": true,
-    "semi": true
+  "singleQuote": true,
+  "semi": true,
+  "importOrder": [
+    "^react(.*)",
+    "hooks/(.*)",
+    "<THIRD_PARTY_MODULES>",
+    "@/(.*)",
+    "^[*.scss]"
+  ],
+  "importOrderSeparation": true
 }

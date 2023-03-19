@@ -1,4 +1,4 @@
 export interface IHeaderProps {
-    user?: string
-    logOut?: () => void
+  user?: string;
+  logOut?: () => void;
 }

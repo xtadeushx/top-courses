@@ -9,3 +9,4 @@ export {
   useNavigate,
 } from 'react-router-dom';
 
+export { useFetch } from './useFetch/useFetch';

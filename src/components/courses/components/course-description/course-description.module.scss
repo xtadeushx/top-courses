@@ -1,0 +1,30 @@
+.course__preview-duration {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: flex-start;
+  gap: 10px;
+
+  & p {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    margin: 0;
+    color: var(--color-white);
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+
+    & span {
+      font-weight: 400;
+      text-transform: lowercase;
+    }
+  }
+}
+
+.clock {
+  width: 35px;
+  height: 35px;
+  color: var(--color-white);
+}

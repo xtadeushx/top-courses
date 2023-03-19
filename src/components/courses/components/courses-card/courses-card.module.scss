@@ -1,0 +1,138 @@
+.curse-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 320px;
+  background-color: var(--color-white);
+  border-radius: 1px;
+  box-shadow: var(--shadow);
+}
+
+.curse-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px 30px;
+}
+
+/* curse-page */
+
+.curse-info_box {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.curse {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 50px;
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+.curse__img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+}
+
+/* curse-info */
+
+.curse-info {
+  width: 100%;
+  max-width: 300px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--color-gray);
+}
+
+.curse-info__title {
+  margin: 0 0 5px;
+  font-weight: 600;
+  font-size: 22px;
+  font-family: 'Playfair Display', serif;
+}
+
+.curse-info__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 300;
+}
+
+.curse-info__duration {
+  min-width: 120px;
+  padding-left: 25px;
+  background-image: url('../../../../assets/images/calendar.svg');
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  background-size: 15px;
+}
+
+.curse-card-lesson::before,
+.curse-card-rating::before {
+  content: '•';
+  margin-right: 10px;
+  color: var(--color-blue-200);
+}
+
+.curse-card-lesson,
+.curse-card-rating {
+  color: var(--color-blue-200);
+}
+
+/* curse-price */
+
+.curse-price__value {
+  display: block;
+  color: var(--color-blue-200);
+  font-size: var(--font-size-600);
+  line-height: 1;
+}
+
+.curse-info__video-wrapper {
+  width: 100%;
+  min-height: 175px;
+}
+
+.red {
+  color: red;
+  font-weight: 600;
+  font-size: medium;
+}
+
+.green {
+  color: #f300ff;
+  animation: neonAnim 2s alternate-reverse infinite;
+}
+
+@keyframes neonAnim {
+  from {
+    text-shadow: 0 0 10px rgb(243 0 255 / 70%),
+      0 0 40px rgb(243 0 255 / 70%), 0 0 100px rgb(243 0 255 / 70%);
+  }
+
+  to {
+    text-shadow: 0 0 5px rgb(243 0 255 / 70%), 0 0 20px rgb(243 0 255 / 70%),
+      0 0 60px rgb(243 0 255 / 70%);
+  }
+}
+
+.yellow {
+  color: #dbff00;
+  animation: neonAnim 2s alternate-reverse infinite;
+}
+
+@keyframes neonAnimYellow {
+  from {
+    text-shadow: 0 0 10px rgb(219 255 0 / 70%),
+      0 0 40px rgb(219 255 0 / 70%), 0 0 100px rgb(219 255 0 / 70%);
+  }
+
+  to {
+    text-shadow: 0 0 5px rgb(219 255 0 / 70%), 0 0 20px rgb(219 255 0 / 70%),
+      0 0 60px rgb(219 255 0 / 70%);
+  }
+}

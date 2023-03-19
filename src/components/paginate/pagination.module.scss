@@ -1,0 +1,39 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.page {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 10px 15px;
+  color: var(--color-blue-200);
+  font-size: medium;
+  border-radius: 100%;
+
+  &:hover {
+    color: var(--color-white);
+    background-color: var(--color-blue-200);
+    cursor: pointer;
+    transition: all 0.4s ease;
+  }
+}
+
+.selected {
+  color: var(--color-white);
+  background-color: var(--color-blue-300);
+  transition: all 0.4s ease;
+}
+
+.next,
+.previous {
+  background-color: transparent;
+
+  &:hover {
+    color: white;
+    background-color: white;
+    cursor: auto;
+  }
+}

@@ -29,8 +29,6 @@ const CourseInfo: React.FC<ICourseInfoProps> = ({ course }) => {
     meta,
   } = course;
   const [currentLesson, setCurrentLesson] = useState(0);
-  const { link, previewImageLink, duration, order, status } =
-    course.lessons[currentLesson];
 
   const handelLessonsOrder = (order: number) => setCurrentLesson(order);
 

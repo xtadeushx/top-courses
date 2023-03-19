@@ -1,19 +1,28 @@
 import ReactPaginate from 'react-paginate';
-import { useState } from 'hooks/hooks';
+import { useFetch, useState } from 'hooks/hooks';
 import { CoursesLayout } from 'components/courses/courses-layout';
 import Spinner from 'components/common/loader/loader';
+
+import { ENV } from 'common/enums/enums';
 
 import { IPaginatedItemsProps } from './types';
 
 import styles from './pagination.module.scss';
 
-const PaginatedCourses: React.FC<IPaginatedItemsProps> = ({
-  itemsPerPage,
-  courses,
-  loading,
-  error,
-}) => {
+const PaginatedCourses: React.FC<IPaginatedItemsProps> = ({ itemsPerPage }) => {
   const [itemOffset, setItemOffset] = useState(0);
+
+  const { data, error } = useFetch(ENV.API_PATH);
+
+  if (!data && !error) {
+    return <Spinner isOverflow />;
+  }
+
+  if (!data && error) {
+    return <h3>{`Server response with  ${error.toString()}`}</h3>;
+  }
+
+  const { courses } = data;
 
   const endOffset = itemOffset + itemsPerPage;
   const currentItems = courses.slice(itemOffset, endOffset);
@@ -23,10 +32,6 @@ const PaginatedCourses: React.FC<IPaginatedItemsProps> = ({
     const newOffset = (event.selected * itemsPerPage) % courses.length;
     setItemOffset(newOffset);
   };
-
-  if (!courses && loading === 'pending') return <Spinner isOverflow />;
-  if (!courses && error)
-    return <h3>{`Server response with  ${error.toString()}`}</h3>;
 
   return (
     <>

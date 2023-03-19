@@ -8,10 +8,8 @@ import styles from './course-content.module.scss';
 import { CourseLocker } from '../course-locker/course-locker';
 
 const CourseContent: React.FC<ICourseContentProps> = ({
-
   lessons,
   currentLesson,
-
   handelLessonsOrder,
 }) => {
   const { previewImageLink, title, duration, order, link, status } = lessons[currentLesson]
@@ -40,7 +38,7 @@ const CourseContent: React.FC<ICourseContentProps> = ({
 
         <CourseLocker status={status} />
 
-        <span className={styles['tooltip-text__subscribe']}>{order - 1} {title} | {formateTime(duration)}</span>
+        <span className={styles['tooltip-text__subscribe']}>{order}. {title} | {formateTime(duration)}</span>
       </div>
       <ul className={styles['course__lessons-list']}>
         {lessons &&

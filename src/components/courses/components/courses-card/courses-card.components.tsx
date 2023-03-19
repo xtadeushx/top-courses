@@ -62,7 +62,7 @@ const CoursesCard: React.FC<ICoursesCardProps> = ({
                   [styles.red]: rating < 3,
                   [styles.yellow]: rating >= 3 && rating < 5,
                   [styles.green]: rating >= 5,
-                })}>{rating}
+                })}>  {rating}
                 </span>
               </span>
             </div>

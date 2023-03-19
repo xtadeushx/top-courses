@@ -7,13 +7,9 @@ import styles from './course-details.module.scss';
 
 const CourseDetails: React.FC = () => {
   const { id } = useParams();
-  const {
-    loading,
-    response: course,
-    error,
-  } = useFetch(`${ENV.API_PATH}/${id}`, 'id');
+  const { data: course, error } = useFetch(`${ENV.API_PATH}/${id}`, 'id');
 
-  if (!course && loading === 'pending') {
+  if (!course) {
     return <Spinner isOverflow />;
   }
 

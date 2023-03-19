@@ -7,12 +7,11 @@ The main theme of the project is a courses platform.
 
 ### Common
 
-1. ESLatest
-2. [Git](https://git-scm.com/doc)
-3. [REST API](https://www.restapitutorial.com/lessons/restquicktips.html)
-4. [npm](<https://en.wikipedia.org/wiki/Npm_(software)>)
-5. [ESLint](https://eslint.org/docs/user-guide/getting-started)
-6. [Prettier](https://prettier.io/)
+1. [Git](https://git-scm.com/doc)
+2. [REST API](https://www.restapitutorial.com/lessons/restquicktips.html)
+3. [npm](<https://en.wikipedia.org/wiki/Npm_(software)>)
+4. [ESLint](https://eslint.org/docs/user-guide/getting-started)
+5. [Prettier](https://prettier.io/)
 
 ### Frontend
 
@@ -25,7 +24,7 @@ The main theme of the project is a courses platform.
 
 ## 🏃‍♂️ Simple start
 
-1. **`npm install`** at the root
+1. **`npm install`** or **`npm install --force`** at the root
 2. **`npm run dev`** at the root
 3. open **`http://localhost:5173/`**
 

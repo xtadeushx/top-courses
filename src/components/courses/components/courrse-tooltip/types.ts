@@ -1,3 +1,3 @@
 export interface ICourseTooltipProps {
-    status: 'locked' | 'unlocked'
+  status: 'locked' | 'unlocked';
 }

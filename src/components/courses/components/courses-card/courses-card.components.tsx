@@ -4,11 +4,8 @@ import { AppRoute } from 'common/enums/enums';
 import { CourseSkills } from '../course-skills/course-skills';
 import { Player } from 'components/common/video/video';
 
-
 import { ICoursesCardProps } from './types';
 import styles from './courses-card.module.scss';
-
-
 
 const CoursesCard: React.FC<ICoursesCardProps> = ({
   title,
@@ -42,7 +39,7 @@ const CoursesCard: React.FC<ICoursesCardProps> = ({
                 autoPlay={false}
                 controls={false}
                 muted={true}
-                status='unlocked'
+                status="unlocked"
               />
             </div>
 
@@ -58,11 +55,15 @@ const CoursesCard: React.FC<ICoursesCardProps> = ({
                 className={styles['curse-card-rating']}
               >
                 rating:
-                <span className={classNames({
-                  [styles.red]: rating < 3,
-                  [styles.yellow]: rating >= 3 && rating < 5,
-                  [styles.green]: rating >= 5,
-                })}>  {rating}
+                <span
+                  className={classNames({
+                    [styles.red]: rating < 3,
+                    [styles.yellow]: rating >= 3 && rating < 5,
+                    [styles.green]: rating >= 5,
+                  })}
+                >
+                  {' '}
+                  {rating}
                 </span>
               </span>
             </div>
@@ -77,7 +78,7 @@ const CoursesCard: React.FC<ICoursesCardProps> = ({
       >
         begin studding
       </Link>
-    </div >
+    </div>
   );
 };
 

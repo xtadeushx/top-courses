@@ -5,7 +5,7 @@ import { formateTime } from 'helpers/helpers';
 import styles from './course-lesson.module.scss';
 interface ICourseLessonProps {
   lesson: Lesson;
-  onclick: (order: number) => void
+  onclick: (order: number) => void;
 }
 const CourseLesson: React.FC<ICourseLessonProps> = ({ lesson, onclick }) => {
   const { order, duration, title, id } = lesson;

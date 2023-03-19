@@ -1,4 +1,3 @@
-
 import { IMetaProps } from './types';
 
 import styles from './course-skills.module.scss';

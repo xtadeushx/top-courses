@@ -12,7 +12,8 @@ const CourseContent: React.FC<ICourseContentProps> = ({
   currentLesson,
   handelLessonsOrder,
 }) => {
-  const { previewImageLink, title, duration, order, link, status } = lessons[currentLesson]
+  const { previewImageLink, title, duration, order, link, status } =
+    lessons[currentLesson];
   return (
     <div className={styles['course__content']}>
       <div className={styles['course__content-video']}>
@@ -38,7 +39,9 @@ const CourseContent: React.FC<ICourseContentProps> = ({
 
         <CourseLocker status={status} />
 
-        <span className={styles['tooltip-text__subscribe']}>{order}. {title} | {formateTime(duration)}</span>
+        <span className={styles['tooltip-text__subscribe']}>
+          {order}. {title} | {formateTime(duration)}
+        </span>
       </div>
       <ul className={styles['course__lessons-list']}>
         {lessons &&

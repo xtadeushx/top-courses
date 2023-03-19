@@ -7,7 +7,6 @@ import { IPlayerProps } from './types';
 import styles from './video.module.scss';
 import { BROKEN_IMG_PATH } from './constants/constants';
 
-
 const Player: React.FC<IPlayerProps> = ({
   poster,
   duration,
@@ -15,7 +14,7 @@ const Player: React.FC<IPlayerProps> = ({
   autoPlay,
   controls,
   muted,
-  status
+  status,
 }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(duration);
@@ -43,12 +42,11 @@ const Player: React.FC<IPlayerProps> = ({
 
   const handelSpeed = (e: any) => {
     if (e.code === 'KeyW' && playbackRate >= 0.5) {
-      setPlaybackRate(prev => prev - 0.25)
-    } else
-      if (e.code === 'KeyQ' && playbackRate < 2.25) {
-        setPlaybackRate(prev => prev + 0.25)
-      }
-  }
+      setPlaybackRate((prev) => prev - 0.25);
+    } else if (e.code === 'KeyQ' && playbackRate < 2.25) {
+      setPlaybackRate((prev) => prev + 0.25);
+    }
+  };
 
   const handleProgress = () => {
     if (videoRef.current !== null) {

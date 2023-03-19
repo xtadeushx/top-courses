@@ -1,4 +1,4 @@
 export interface IMenuProps {
-    user?: string;
-    logOut?: () => void
+  user?: string;
+  logOut?: () => void;
 }

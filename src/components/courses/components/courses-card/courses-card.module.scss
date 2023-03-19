@@ -92,7 +92,6 @@
   line-height: 1;
 }
 
-
 .curse-info__video-wrapper {
   width: 100%;
   min-height: 175px;
@@ -105,45 +104,35 @@
 }
 
 .green {
+  color: #f300ff;
   animation: neonAnim 2s alternate-reverse infinite;
-  color: #F300FF;
-
 }
 
 @keyframes neonAnim {
   from {
-    text-shadow:
-      0 0 10px rgba(243, 0, 255, .7),
-      0 0 40px rgba(243, 0, 255, .7),
-      0 0 100px rgba(243, 0, 255, .7);
+    text-shadow: 0 0 10px rgb(243 0 255 / 70%),
+      0 0 40px rgb(243 0 255 / 70%), 0 0 100px rgb(243 0 255 / 70%);
   }
 
   to {
-    text-shadow:
-      0 0 5px rgba(243, 0, 255, .7),
-      0 0 20px rgba(243, 0, 255, .7),
-      0 0 60px rgba(243, 0, 255, .7);
+    text-shadow: 0 0 5px rgb(243 0 255 / 70%), 0 0 20px rgb(243 0 255 / 70%),
+      0 0 60px rgb(243 0 255 / 70%);
   }
 }
 
-
 .yellow {
+  color: #dbff00;
   animation: neonAnim 2s alternate-reverse infinite;
-  color: #DBFF00;
 }
 
 @keyframes neonAnimYellow {
   from {
-    text-shadow:
-      0 0 10px rgba(219, 255, 0, .7),
-      0 0 40px rgba(219, 255, 0, .7),
-      0 0 100px rgba(219, 255, 0, .7);
+    text-shadow: 0 0 10px rgb(219 255 0 / 70%),
+      0 0 40px rgb(219 255 0 / 70%), 0 0 100px rgb(219 255 0 / 70%);
   }
 
   to {
-    text-shadow:
-      0 0 5px rgba(219, 255, 0, .7),
-      0 0 20px rgba(219, 255, 0, .7),
-      0 0 60px rgba(219, 255, 0, .7);
+    text-shadow: 0 0 5px rgb(219 255 0 / 70%), 0 0 20px rgb(219 255 0 / 70%),
+      0 0 60px rgb(219 255 0 / 70%);
   }
 }

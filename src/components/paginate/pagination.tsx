@@ -17,7 +17,6 @@ const PaginatedCourses: React.FC<IPaginatedItemsProps> = ({ itemsPerPage }) => {
   if (!data && !error) {
     return <Spinner isOverflow />;
   }
-
   if (!data && error) {
     return <h3>{`Server response with  ${error.toString()}`}</h3>;
   }

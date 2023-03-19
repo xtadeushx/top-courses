@@ -12,19 +12,13 @@ import styles from './app.module.scss';
 import Spinner from 'components/common/loader/loader';
 
 const App = () => {
-
-
   return (
     <div className={styles.app}>
       <Header logOut={() => console.log('log out')} user="Olexandr Unknown" />
       <Routes>
         <Route
           path={AppRoute.ROOT}
-          element={
-            <PaginatedCourses
-              itemsPerPage={10}
-            />
-          }
+          element={<PaginatedCourses itemsPerPage={10} />}
         />
         <Route path={AppRoute.LOGIN} element={<Login />} />
         <Route path={AppRoute.REGISTRATION} element={<Registration />} />

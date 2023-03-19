@@ -1,6 +1,5 @@
-
 export interface ICourseList {
-  courses: Course[]
+  courses: Course[];
 }
 
 export interface Course {

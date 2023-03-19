@@ -99,42 +99,34 @@
 
 .green {
   animation: neonAnim 2s alternate-reverse infinite;
-  color: #F300FF;
+  color: #f300ff;
 }
 
 @keyframes neonAnim {
   from {
-    text-shadow:
-      0 0 10px rgba(243, 0, 255, .7),
-      0 0 40px rgba(243, 0, 255, .7),
-      0 0 100px rgba(243, 0, 255, .7);
+    text-shadow: 0 0 10px rgba(243, 0, 255, 0.7),
+      0 0 40px rgba(243, 0, 255, 0.7), 0 0 100px rgba(243, 0, 255, 0.7);
   }
 
   to {
-    text-shadow:
-      0 0 5px rgba(243, 0, 255, .7),
-      0 0 20px rgba(243, 0, 255, .7),
-      0 0 60px rgba(243, 0, 255, .7);
+    text-shadow: 0 0 5px rgba(243, 0, 255, 0.7), 0 0 20px rgba(243, 0, 255, 0.7),
+      0 0 60px rgba(243, 0, 255, 0.7);
   }
 }
 
 .yellow {
   animation: neonAnimYellow 2s alternate-reverse infinite;
-  color: #DBFF00;
+  color: #dbff00;
 }
 
 @keyframes neonAnimYellow {
   from {
-    text-shadow:
-      0 0 10px rgba(219, 255, 0, .7),
-      0 0 40px rgba(219, 255, 0, .7),
-      0 0 100px rgba(219, 255, 0, .7);
+    text-shadow: 0 0 10px rgba(219, 255, 0, 0.7),
+      0 0 40px rgba(219, 255, 0, 0.7), 0 0 100px rgba(219, 255, 0, 0.7);
   }
 
   to {
-    text-shadow:
-      0 0 5px rgba(219, 255, 0, .7),
-      0 0 20px rgba(219, 255, 0, .7),
-      0 0 60px rgba(219, 255, 0, .7);
+    text-shadow: 0 0 5px rgba(219, 255, 0, 0.7), 0 0 20px rgba(219, 255, 0, 0.7),
+      0 0 60px rgba(219, 255, 0, 0.7);
   }
 }

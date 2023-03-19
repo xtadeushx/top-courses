@@ -11,7 +11,7 @@ import { CourseDescription } from '../course-description/course-description';
 import { CourseSkills } from '../course-skills/course-skills';
 import { CourseContent } from '../course-content/course-content';
 import classNames from 'classnames';
-import { useState } from 'hooks/hooks';
+import { useState, useEffect } from 'hooks/hooks';
 
 interface ICourseInfoProps {
   course: ICourse;
@@ -28,10 +28,13 @@ const CourseInfo: React.FC<ICourseInfoProps> = ({ course }) => {
     description,
     meta,
   } = course;
-  const [currentLesson, setCurrentLesson] = useState(0);
+  const [currentLesson, setCurrentLesson] = useState(1);
 
   const handelLessonsOrder = (order: number) => setCurrentLesson(order);
 
+  useEffect(() => { resetLessonsOrder() }, [])
+
+  const resetLessonsOrder = () => setCurrentLesson(1);
   return (
     <section className={styles['course']}>
       <div className="course__description">

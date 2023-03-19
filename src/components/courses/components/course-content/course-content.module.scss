@@ -5,11 +5,19 @@
   align-items: flex-start;
   gap: 10px;
   background-color: var(--color-blue-400);
+
+
 }
 
 .course__content-video {
   width: 70%;
   height: 100%;
+  position: relative;
+  object-fit: cover;
+
+  & video[poster] {
+    height: 120%;
+  }
 }
 
 .course__lessons-list {
@@ -40,10 +48,6 @@
   animation-duration: 8s;
 }
 
-.course__content-video {
-  position: relative;
-  height: 100%;
-}
 
 .tooltip-text__subscribe {
   position: absolute;

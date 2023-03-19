@@ -6,14 +6,14 @@ import { ICourseContentProps } from './types';
 
 import styles from './course-content.module.scss';
 import { CourseLocker } from '../course-locker/course-locker';
+import { Lesson } from 'common/types/course.types';
 
 const CourseContent: React.FC<ICourseContentProps> = ({
   lessons,
   currentLesson,
   handelLessonsOrder,
 }) => {
-  const { previewImageLink, title, duration, order, link, status } =
-    lessons[currentLesson];
+  const { previewImageLink, title, duration, order, link, status } = lessons.find(el => el.order === currentLesson) as Lesson;
   return (
     <div className={styles['course__content']}>
       <div className={styles['course__content-video']}>

@@ -1,3 +1,3 @@
 export type TSpinner = {
-  isOverflow: boolean;
+  isOverflowRootContainer: boolean;
 };

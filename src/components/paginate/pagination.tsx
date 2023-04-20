@@ -15,7 +15,7 @@ const PaginatedCourses: React.FC<IPaginatedItemsProps> = ({ itemsPerPage }) => {
   const { response, error, loading } = useFetch(ENV.API_PATH);
 
   if (!response && !error) {
-    return <Spinner isOverflow />;
+    return <Spinner isOverflowRootContainer />;
   }
   if (!response && error) {
     return <h3>{`Server response with  ${error.toString()}`}</h3>;

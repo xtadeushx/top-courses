@@ -1,8 +1,8 @@
 import styles from './loader.module.scss';
 import { TSpinner } from './types';
 
-const Spinner = ({ isOverflow }: TSpinner) =>
-  isOverflow ? (
+const Spinner = ({ isOverflowRootContainer }: TSpinner) =>
+  isOverflowRootContainer ? (
     <div className={styles.container}>
       <div className={styles.loader}>Loading...</div>
     </div>

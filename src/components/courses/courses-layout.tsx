@@ -1,4 +1,3 @@
-import Spinner from 'components/common/loader/loader';
 import { CoursesCard } from './components/courses-card/courses-card.components';
 import styles from './courses-layout.module.scss';
 import { Course } from 'common/types/coursesList.types';

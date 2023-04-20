@@ -10,7 +10,7 @@ const CourseDetails: React.FC = () => {
   const { data: course, error } = useFetch(`${ENV.API_PATH}/${id}`, 'id');
 
   if (!course) {
-    return <Spinner isOverflow />;
+    return <Spinner isOverflowRootContainer />;
   }
 
   if (!course && error) {

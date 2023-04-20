@@ -1,20 +1,11 @@
 import { Link } from 'hooks/hooks';
-import { Meta } from 'common/types/course.types';
+import classNames from 'classnames';
 import { AppRoute } from 'common/enums/enums';
 import { CourseSkills } from '../course-skills/course-skills';
 import { Player } from 'components/common/video/video';
 
+import { ICoursesCardProps } from './types';
 import styles from './courses-card.module.scss';
-import classNames from 'classnames';
-
-interface ICoursesCardProps {
-  id: string;
-  title: string;
-  lessonsCount: number;
-  rating: number;
-  preview: string;
-  meta: Meta;
-}
 
 const CoursesCard: React.FC<ICoursesCardProps> = ({
   title,
@@ -43,11 +34,12 @@ const CoursesCard: React.FC<ICoursesCardProps> = ({
             <div className={styles['curse-info__video-wrapper']}>
               <Player
                 duration={duration}
-                poster={preview}
+                poster={preview + '/cover.webp'}
                 link={link}
                 autoPlay={false}
                 controls={false}
                 muted={true}
+                status="unlocked"
               />
             </div>
 
@@ -63,11 +55,15 @@ const CoursesCard: React.FC<ICoursesCardProps> = ({
                 className={styles['curse-card-rating']}
               >
                 rating:
-                <span className={classNames({
-                  [styles.red]: rating < 3,
-                  [styles.yellow]: rating >= 3 && rating < 5,
-                  [styles.green]: rating >= 5,
-                })}>{rating}
+                <span
+                  className={classNames({
+                    [styles.red]: rating < 3,
+                    [styles.yellow]: rating >= 3 && rating < 5,
+                    [styles.green]: rating >= 5,
+                  })}
+                >
+                  {' '}
+                  {rating}
                 </span>
               </span>
             </div>
@@ -82,7 +78,7 @@ const CoursesCard: React.FC<ICoursesCardProps> = ({
       >
         begin studding
       </Link>
-    </div >
+    </div>
   );
 };
 

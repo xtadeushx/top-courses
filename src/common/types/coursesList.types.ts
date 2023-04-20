@@ -1,3 +1,7 @@
+export interface ICourseList {
+  courses: Course[];
+}
+
 export interface Course {
   id: string;
   title: string;

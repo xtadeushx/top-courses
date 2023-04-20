@@ -1,0 +1,42 @@
+.tooltip-text__up,
+.tooltip-text__down {
+  position: absolute;
+  left: -105px;
+  z-index: 1;
+  width: 100px;
+  padding: 5px 0;
+  color: var(--color-white);
+  font-size: 11px;
+  text-align: center;
+  background-color: var(--color-blue-400);
+  border-radius: 6px;
+  opacity: 0;
+  transition: all 0.8s ease;
+  animation: appear;
+  animation-duration: 8s;
+}
+
+.tooltip-text__up {
+  bottom: 0;
+}
+
+.tooltip-text__down {
+  bottom: 40px;
+}
+
+@keyframes appear {
+  0% {
+    /* pushes the sun down past the viewport */
+    opacity: 0;
+  }
+
+  50% {
+    /* returns the sun to its default position */
+    opacity: 1;
+  }
+
+  100% {
+    /* returns the sun to its default position */
+    opacity: 0;
+  }
+}

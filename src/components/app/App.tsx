@@ -9,6 +9,7 @@ import { Login } from 'components/pages/login/login';
 import { CourseDetails } from 'components/courses/components/course-details/course-details';
 
 import styles from './app.module.scss';
+import Spinner from 'components/common/loader/loader';
 
 const App = () => {
   const { loading, response, error } = useFetch(ENV.API_PATH);

@@ -1,4 +1,3 @@
-
 export type TButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   children: React.ReactNode;
   onClick?: () => void;

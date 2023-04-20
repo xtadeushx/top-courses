@@ -1,7 +1,7 @@
 import { HttpHeader, StorageKey } from 'common/enums/enums';
 import { ICourse } from 'common/types/course.types';
 import { useState, useEffect } from 'hooks/hooks';
-import { useToken } from 'hooks/useFetch/useToken';
+import { useToken } from 'hooks/useToken/useToken';
 import { storage } from 'services/services';
 
 const useFetch = (url: string, id = '') => {
@@ -9,8 +9,8 @@ const useFetch = (url: string, id = '') => {
     | null>(null);
   const [error, setError] = useState<Error | null>(null);
   const [loading, setLoading] = useState<
-    'idle' | 'pending' | 'succeeded' | 'failed'
-  >('idle');
+    boolean
+  >(false);
   useToken();
   const token = storage.getItem(StorageKey.TOKEN);
   const headers = new Headers();
@@ -19,18 +19,19 @@ const useFetch = (url: string, id = '') => {
 
   useEffect(() => {
     const doFetch = async () => {
-      setLoading('pending');
       try {
+        setLoading(true);
         const res = await fetch(url, { headers });
         if (!res.ok) {
           throw new Error(`Fetch error ${res.status}`);
         }
         const json = await res.json() as ICourse[];
-        setLoading('succeeded');
+        setLoading(false);
         setResponse(json);
       } catch (e: any) {
         setError(e);
-        setLoading('failed');
+      } finally {
+        setLoading(false);
       }
     };
     doFetch();

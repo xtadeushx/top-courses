@@ -7,14 +7,15 @@ import styles from './course-details.module.scss';
 
 const CourseDetails: React.FC = () => {
   const { id } = useParams();
-  const {
-    loading,
-    response: course,
-    error,
-  } = useFetch(`${ENV.API_PATH}/${id}`, 'id');
-  if (!course && loading === 'pending') return <Spinner isOverflow />;
-  if (!course && error)
+  const { data: course, error } = useFetch(`${ENV.API_PATH}/${id}`, 'id');
+
+  if (!course) {
+    return <Spinner isOverflow />;
+  }
+
+  if (!course && error) {
     return <h3>{`Server response with  ${error.toString()}`}</h3>;
+  }
 
   return (
     <div className={styles['course-page']}>

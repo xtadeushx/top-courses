@@ -1,11 +1,13 @@
-import { DAY, HOUR, MINUTE } from 'helpers/constants/constants.helpers';
+import { MINUTE } from 'helpers/constants/constants.helpers';
 
-export const formateTime = (date: number) => {
+export const formateTime = (totalSeconds: number) => {
   let result;
 
-  let hours = Math.round(date / MINUTE).toString();
-  let minutes = Math.round(date / HOUR).toString();
-  let seconds = Math.round(date / DAY).toString();
+  const totalMinutes = Math.floor(totalSeconds / MINUTE);
+
+  let seconds = Math.round(totalSeconds % MINUTE).toString();
+  let hours = Math.floor(totalMinutes / MINUTE).toString();
+  let minutes = Math.round(totalMinutes % MINUTE).toString();
 
   hours = +hours < 10 ? '0' + hours : hours;
 

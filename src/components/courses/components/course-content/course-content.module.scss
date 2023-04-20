@@ -5,11 +5,19 @@
   align-items: flex-start;
   gap: 10px;
   background-color: var(--color-blue-400);
+
+
 }
 
 .course__content-video {
   width: 70%;
   height: 100%;
+  position: relative;
+  object-fit: cover;
+
+  & video[poster] {
+    height: 120%;
+  }
 }
 
 .course__lessons-list {
@@ -17,7 +25,39 @@
   max-width: 100%;
   max-height: 380px;
   margin-top: 0;
-  padding: 0 5px;
+  padding: 5px;
   overflow-y: scroll;
   list-style: none;
+}
+
+.tooltip-text__up,
+.tooltip-text__down {
+  position: absolute;
+  left: -105px;
+  z-index: 1;
+  width: 100px;
+  padding: 5px 0;
+  color: var(--color-white);
+  font-size: 11px;
+  text-align: center;
+  background-color: var(--color-blue-400);
+  border-radius: 6px;
+  opacity: 0;
+  transition: all 0.8s ease;
+  animation: appear;
+  animation-duration: 8s;
+}
+
+
+.tooltip-text__subscribe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  display: inline-block;
+  width: 100%;
+  padding: 5px;
+  color: var(--color-white);
+  font-size: 16px;
+  background-color: var(--color-blue-400);
 }

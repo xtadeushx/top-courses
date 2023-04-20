@@ -3,7 +3,7 @@
 :focus,
 :focus-visible {
   outline: 0;
-  box-shadow: 0 0 0 2px var(--color-blue-300);
+  box-shadow: 0 0 0 2px $color-blue-300;
 }
 
 :focus:not(:focus-visible) {
@@ -12,8 +12,8 @@
 }
 
 ::selection {
-  color: var(--color-white);
-  background-color: var(--color-blue-200);
+  color: $color-white;
+  background-color: $color-blue-200;
 }
 
 *,
@@ -34,13 +34,13 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  color: var(--color-blue-400);
-  font-size: var(--font-size-200);
+  color: $color-blue-400;
+  font-size: $font-size-200;
   font-family: Assistant, sans-serif;
   font-style: normal;
   line-height: 1.5;
-  text-rendering: optimizespeed;
-  background-color: var(--color-white);
+  //text-rendering: optimizespeed;
+  background-color: $color-white;
 }
 
 main {
@@ -77,11 +77,11 @@ select {
   width: 100%;
   min-height: 45px;
   padding: 10px 15px;
-  color: var(--color-white);
-  font-size: var(--font-size-200);
+  color: $color-white;
+  font-size: $font-size-200;
   text-align: center;
   text-decoration: none;
-  background-color: var(--color-blue-200);
+  background-color: $color-blue-200;
   border: none;
   border-radius: 1px;
   cursor: pointer;
@@ -89,5 +89,5 @@ select {
 }
 
 .button:hover {
-  background-color: var(--color-blue-300);
+  background-color: $color-blue-300;
 }

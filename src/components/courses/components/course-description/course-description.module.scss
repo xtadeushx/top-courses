@@ -1,3 +1,5 @@
+@import '../../../../styles/styles';
+
 .course__preview-duration {
   display: flex;
   flex-direction: row;
@@ -11,7 +13,7 @@
     justify-content: start;
     align-items: start;
     margin: 0;
-    color: var(--color-white);
+    color: $color-white;
     font-weight: 600;
     font-size: 14px;
     text-transform: uppercase;
@@ -26,5 +28,5 @@
 .clock {
   width: 35px;
   height: 35px;
-  color: var(--color-white);
+  color: $color-white;
 }

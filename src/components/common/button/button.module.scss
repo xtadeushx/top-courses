@@ -1,13 +1,16 @@
+@import '@styles/styles';
+
+
 .button {
   display: block;
   width: 100%;
   min-height: 45px;
   padding: 10px 15px;
-  color: var(--color-white);
-  font-size: var(--font-size-200);
+  color: $color-white;
+  font-size: $font-size-200;
   text-align: center;
   text-decoration: none;
-  background-color: var(--color-blue-200);
+  background-color: $color-blue-200;
   border: none;
   border-radius: 1px;
   cursor: pointer;
@@ -15,5 +18,5 @@
 }
 
 .button:hover {
-  background-color: var(--color-blue-300);
+  background-color: $color-blue-300;
 }

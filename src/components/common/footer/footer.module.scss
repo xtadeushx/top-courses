@@ -1,11 +1,13 @@
 /* footer */
+@import '../../../styles/styles';
 
 .footer {
   padding: 30px 20px;
-  color: var(--color-white);
+  color: $color-white;
   text-align: center;
-  background-color: var(--color-blue-400);
+  background-color: $color-blue-400;
 }
+
 
 .footer__text {
   display: flex;
@@ -18,13 +20,13 @@
 }
 
 .footer__link {
-  color: var(--color-blue-200);
+  color: $color-blue-200;
   text-decoration: none;
   transition: 0.1s color ease;
 }
 
 .footer__link:hover {
-  color: var(--color-blue-300);
+  color: $color-blue-300;
 }
 
 .gitHub {

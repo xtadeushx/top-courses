@@ -1,10 +1,12 @@
+@import '../../../../styles/styles';
+
 .lesson {
   display: inline-block;
   display: flex;
   justify-content: space-between;
   align-items: start;
   width: 100%;
-  color: var(--color-white);
+  color: $color-white;
   font-size: 18px;
 
   &:hover {

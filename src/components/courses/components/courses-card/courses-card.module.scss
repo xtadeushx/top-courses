@@ -1,11 +1,14 @@
+@import '../../../../styles/styles';
+
+
 .curse-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   max-width: 320px;
-  background-color: var(--color-white);
+  background-color: $color-white;
   border-radius: 1px;
-  box-shadow: var(--shadow);
+  box-shadow: $shadow;
 }
 
 .curse-card__content {
@@ -28,7 +31,7 @@
   flex-wrap: wrap;
   gap: 20px 50px;
   width: 100%;
-  max-width: var(--container-width);
+  max-width: $container-width;
   margin: 0 auto;
 }
 
@@ -44,7 +47,7 @@
   width: 100%;
   max-width: 300px;
   padding-bottom: 10px;
-  border-bottom: 1px solid var(--color-gray);
+  border-bottom: 1px solid $color-gray;
 }
 
 .curse-info__title {
@@ -75,20 +78,20 @@
 .curse-card-rating::before {
   content: '•';
   margin-right: 10px;
-  color: var(--color-blue-200);
+  color: $color-blue-200;
 }
 
 .curse-card-lesson,
 .curse-card-rating {
-  color: var(--color-blue-200);
+  color: $color-blue-200;
 }
 
 /* curse-price */
 
 .curse-price__value {
   display: block;
-  color: var(--color-blue-200);
-  font-size: var(--font-size-600);
+  color: $color-blue-200;
+  font-size: $font-size-600;
   line-height: 1;
 }
 

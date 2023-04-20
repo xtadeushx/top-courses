@@ -1,5 +1,5 @@
 import ReactPaginate from 'react-paginate';
-import { useFetch, useState } from 'hooks/hooks';
+import { useCallback, useFetch, useState } from 'hooks/hooks';
 import { CoursesLayout } from 'components/courses/courses-layout';
 import Spinner from 'components/common/loader/loader';
 
@@ -27,10 +27,10 @@ const PaginatedCourses: React.FC<IPaginatedItemsProps> = ({ itemsPerPage }) => {
   const currentItems = courses.slice(itemOffset, endOffset);
   const pageCount = Math.ceil(courses.length / itemsPerPage);
 
-  const handlePageClick = (event: any) => {
+  const handlePageClick = useCallback((event: any) => {
     const newOffset = (event.selected * itemsPerPage) % courses.length;
     setItemOffset(newOffset);
-  };
+  }, [itemsPerPage]);
 
   return (
     <>

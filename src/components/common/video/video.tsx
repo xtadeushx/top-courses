@@ -21,6 +21,7 @@ const Player: React.FC<IPlayerProps> = ({
   const [playbackRate, setPlaybackRate] = useState(1);
   const videoRef = useRef<HTMLVideoElement>(null);
   useEffect(() => {
+
     if (videoRef.current !== null) {
       videoRef.current.playbackRate = playbackRate;
     }
@@ -63,6 +64,7 @@ const Player: React.FC<IPlayerProps> = ({
       videoPlayer.poster = BROKEN_IMG_PATH;
     }
   };
+
   return (
     <>
       <ReactHlsPlayer

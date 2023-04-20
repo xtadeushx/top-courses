@@ -4,8 +4,7 @@ import { TButtonProps } from './types';
 
 import styles from './button.module.scss';
 
-const Button = ({
-  children,
+const Button: React.FC<TButtonProps & React.PropsWithChildren> = ({
   onClick,
   type,
   dataTestId,
@@ -20,7 +19,6 @@ const Button = ({
       onClick={onClick}
       {...rest}
     >
-      {children}
     </button>
   );
 };

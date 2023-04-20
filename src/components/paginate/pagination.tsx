@@ -12,16 +12,16 @@ import styles from './pagination.module.scss';
 const PaginatedCourses: React.FC<IPaginatedItemsProps> = ({ itemsPerPage }) => {
   const [itemOffset, setItemOffset] = useState(0);
 
-  const { data, error } = useFetch(ENV.API_PATH);
+  const { response, error, loading } = useFetch(ENV.API_PATH);
 
-  if (!data && !error) {
+  if (!response && !error) {
     return <Spinner isOverflow />;
   }
-  if (!data && error) {
+  if (!response && error) {
     return <h3>{`Server response with  ${error.toString()}`}</h3>;
   }
 
-  const { courses } = data;
+  const { courses } = response;
 
   const endOffset = itemOffset + itemsPerPage;
   const currentItems = courses.slice(itemOffset, endOffset);

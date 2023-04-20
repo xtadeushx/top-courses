@@ -5,27 +5,26 @@
   color: $color-white;
   text-align: center;
   background-color: $color-blue-400;
-}
 
+  &__text {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+  }
 
-.footer__text {
-  display: flex;
-  justify-content: center;
-  gap: 7px;
-}
+  &__icon {
+    width: 16px;
+  }
 
-.footer__icon {
-  width: 16px;
-}
+  &__link {
+    color: $color-blue-200;
+    text-decoration: none;
+    transition: 0.1s color ease;
 
-.footer__link {
-  color: $color-blue-200;
-  text-decoration: none;
-  transition: 0.1s color ease;
-}
-
-.footer__link:hover {
-  color: $color-blue-300;
+    &:hover {
+      color: $color-blue-300;
+    }
+  }
 }
 
 .gitHub {

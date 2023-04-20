@@ -1,5 +1,8 @@
 import styles from './loader.module.scss';
-import { TSpinner } from './types';
+
+type TSpinner = {
+  isOverflowRootContainer: boolean;
+};
 
 const Spinner = ({ isOverflowRootContainer }: TSpinner) =>
   isOverflowRootContainer ? (

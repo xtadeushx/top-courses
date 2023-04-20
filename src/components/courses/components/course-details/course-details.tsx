@@ -7,7 +7,7 @@ import styles from './course-details.module.scss';
 
 const CourseDetails: React.FC = () => {
   const { id } = useParams();
-  const { data: course, error } = useFetch(`${ENV.API_PATH}/${id}`, 'id');
+  const { response: course, error } = useFetch(`${ENV.API_PATH}/${id}`, 'id');
 
   if (!course) {
     return <Spinner isOverflowRootContainer />;

@@ -27,10 +27,10 @@ const PaginatedCourses: React.FC<IPaginatedItemsProps> = ({ itemsPerPage }) => {
   const currentItems = courses.slice(itemOffset, endOffset);
   const pageCount = Math.ceil(courses.length / itemsPerPage);
 
-  const handlePageClick = useCallback((event: any) => {
+  const handlePageClick = (event: any) => {
     const newOffset = (event.selected * itemsPerPage) % courses.length;
     setItemOffset(newOffset);
-  }, [itemsPerPage]);
+  };
 
   return (
     <>
